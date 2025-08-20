@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # PostgreSQL to DSQL CDC Sync Script
-# Usage: ./run-postgres-to-dsql.sh [config-file]
+# Usage: ./run-cdc.sh [config-file]
 
 set -e
 
@@ -30,7 +30,6 @@ echo "Running Flink CDC job..."
 # Run the Flink job
 $FLINK_HOME/bin/flink run -D flink.cdc.checkpoint.timeout=60000 \
     --class org.apache.flink.cdc.cli.CliFrontend \
-    $CLASSPATH_ARGS \
     "$CLI_JAR" \
     --flink-home "$FLINK_HOME" \
     "$CONFIG_FILE"
