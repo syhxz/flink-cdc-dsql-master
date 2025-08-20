@@ -1,0 +1,49 @@
+################################################################################
+# Description: PostgreSQL to PostgreSQL CDC Pipeline Configuration
+# Using DSQL connector for PostgreSQL-compatible sink
+################################################################################
+
+source:
+  type: postgres
+  hostname: localhost  # Source PostgreSQL hostname
+  port: 5432
+  username: postgres  # Source PostgreSQL username
+  password: postgres  # Source PostgreSQL password
+  database-name: source_db  # Source database name
+  schema-name: public  # Source schema name
+  tables: "public.users,public.orders"  # Tables to replicate
+  slot.name: flink_postgres_to_postgres_slot  # Unique replication slot name
+  scan.startup.mode: initial  # Options: initial, latest-offset
+  decoding.plugin.name: pgoutput  # Use pgoutput for better compatibility
+
+sink:
+  type: dsql  # Use DSQL connector (PostgreSQL-compatible)
+  host: localhost  # Target PostgreSQL hostname
+  port: 5433  # Target PostgreSQL port (different from source)
+  database: target_db  # Target database name
+  schema: public  # Target schema name
+  use-iam-auth: false  # Use username/password authentication
+  username: postgres  # Target PostgreSQL username
+  password: postgres  # Target PostgreSQL password
+  region: us-east-1  # Required by DSQL connector (can be dummy for regular PostgreSQL)
+  max-pool-size: 10
+  min-pool-size: 2
+  connection-max-lifetime-ms: 600000  # 10 minutes
+  connection-idle-timeout-ms: 300000   # 5 minutes
+  enable-full-load: true
+  parallelism: 1
+  # Batch processing configuration
+  batch-size: 1000              # Events per batch
+  batch-timeout: 1min           # Max wait time for partial batch
+  # Connection pool configuration for batch processing
+  batch-max-pool-size: 10       # Max connections in pool
+  batch-min-pool-size: 2        # Min connections in pool
+
+pipeline:
+  name: "PostgreSQL to PostgreSQL CDC Pipeline"
+  parallelism: 1
+
+# Optional: Configure checkpointing for fault tolerance
+checkpoint:
+  interval: 10s
+  mode: EXACTLY_ONCE

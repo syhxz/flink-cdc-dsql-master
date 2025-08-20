@@ -1,0 +1,14 @@
+Manifest-Version: 1.0
+Created-By: Apache Maven 3.9.11
+Built-By: yonghs
+Build-Jdk: 24.0.1
+Specification-Title: flink-cdc-cli
+Specification-Version: 3.5
+Specification-Vendor: The Apache Software Foundation
+Implementation-Title: flink-cdc-cli
+Implementation-Version: 3.5-SNAPSHOT
+Implementation-Vendor-Id: org.apache.flink
+Implementation-Vendor: The Apache Software Foundation
+Implementation-URL: https://www.apache.org/flink-cdc-parent/flink-cdc-cl
+ i/
+

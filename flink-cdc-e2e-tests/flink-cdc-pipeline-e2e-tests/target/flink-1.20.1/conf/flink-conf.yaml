@@ -1,0 +1,54 @@
+# Fixed Flink Configuration for TaskManager Startup Issues
+
+# JobManager Memory Configuration
+jobmanager.memory.process.size: 1600m
+jobmanager.memory.heap.size: 1024m
+
+# TaskManager Memory Configuration - FIXED
+taskmanager.memory.process.size: 2048m
+taskmanager.memory.flink.size: 1536m
+taskmanager.memory.task.heap.size: 512m
+taskmanager.memory.managed.size: 512m
+taskmanager.numberOfTaskSlots: 4
+
+# Network Configuration
+taskmanager.network.memory.fraction: 0.1
+taskmanager.network.memory.min: 64mb
+taskmanager.network.memory.max: 1gb
+
+# RPC Configuration - FIX CONNECTIVITY ISSUES
+taskmanager.rpc.port: 6122
+jobmanager.rpc.address: localhost
+jobmanager.rpc.port: 6123
+
+# REST API Configuration
+rest.port: 8081
+rest.address: localhost
+rest.bind-address: 0.0.0.0
+
+# High Availability - DISABLED FOR STANDALONE
+high-availability: NONE
+
+# Checkpointing
+state.backend: filesystem
+state.checkpoints.dir: file:///tmp/flink-checkpoints
+state.savepoints.dir: file:///tmp/flink-savepoints
+
+# Parallelism
+parallelism.default: 1
+
+# Logging
+rootLogger.level: INFO
+
+# TaskManager Startup Configuration - KEY FIXES
+taskmanager.host: localhost
+taskmanager.bind-host: 0.0.0.0
+taskmanager.registration.timeout: 30s
+taskmanager.registration.max-backoff: 30s
+
+# JVM Options for TaskManager
+env.java.opts.taskmanager: -XX:+UseG1GC -XX:MaxGCPauseMillis=200
+
+# Disable problematic features
+taskmanager.memory.jvm-metaspace.size: 256m
+cluster.evenly-spread-out-slots: false

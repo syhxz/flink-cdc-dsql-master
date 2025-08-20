@@ -1,0 +1,8 @@
+/Users/yonghs/Downloads/flink-cdc-master/flink-cdc-cli/src/main/java/org/apache/flink/cdc/cli/parser/PipelineDefinitionParser.java
+/Users/yonghs/Downloads/flink-cdc-master/flink-cdc-cli/src/main/java/org/apache/flink/cdc/cli/CliFrontendOptions.java
+/Users/yonghs/Downloads/flink-cdc-master/flink-cdc-cli/src/main/java/org/apache/flink/cdc/cli/utils/FlinkEnvironmentUtils.java
+/Users/yonghs/Downloads/flink-cdc-master/flink-cdc-cli/src/main/java/org/apache/flink/cdc/cli/utils/YamlParserUtils.java
+/Users/yonghs/Downloads/flink-cdc-master/flink-cdc-cli/src/main/java/org/apache/flink/cdc/cli/CliFrontend.java
+/Users/yonghs/Downloads/flink-cdc-master/flink-cdc-cli/src/main/java/org/apache/flink/cdc/cli/utils/ConfigurationUtils.java
+/Users/yonghs/Downloads/flink-cdc-master/flink-cdc-cli/src/main/java/org/apache/flink/cdc/cli/parser/YamlPipelineDefinitionParser.java
+/Users/yonghs/Downloads/flink-cdc-master/flink-cdc-cli/src/main/java/org/apache/flink/cdc/cli/CliExecutor.java

@@ -1,0 +1,14 @@
+org/apache/flink/cdc/connectors/mysql/source/MySqlDataSourceOptions.class
+org/apache/flink/cdc/connectors/mysql/utils/MySqlTypeUtils.class
+org/apache/flink/cdc/connectors/mysql/source/MySqlEventDeserializer.class
+org/apache/flink/cdc/connectors/mysql/source/OpTsMetadataColumn.class
+org/apache/flink/cdc/connectors/mysql/source/parser/CustomAlterTableParserListener.class
+org/apache/flink/cdc/connectors/mysql/source/parser/CustomMySqlAntlrDdlParserListener.class
+org/apache/flink/cdc/connectors/mysql/utils/MySqlSchemaUtils.class
+org/apache/flink/cdc/connectors/mysql/source/reader/MySqlPipelineRecordEmitter.class
+org/apache/flink/cdc/connectors/mysql/source/parser/CustomMySqlAntlrDdlParser.class
+org/apache/flink/cdc/connectors/mysql/source/MySqlDataSource.class
+org/apache/flink/cdc/connectors/mysql/factory/MySqlDataSourceFactory.class
+org/apache/flink/cdc/connectors/mysql/source/MySqlSchemaDataTypeInference.class
+org/apache/flink/cdc/connectors/mysql/source/MySqlMetadataAccessor.class
+org/apache/flink/cdc/connectors/mysql/source/parser/CustomColumnDefinitionParserListener.class

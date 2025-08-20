@@ -1,0 +1,8 @@
+org/apache/flink/cdc/connectors/base/source/assigner/state/PendingSplitsStateSerializerTest.class
+org/apache/flink/cdc/connectors/base/mocked/MockedSourceConfig.class
+org/apache/flink/cdc/connectors/base/GenericConnectionPoolTest.class
+org/apache/flink/cdc/connectors/base/source/assigner/state/PendingSplitsStateSerializerTest$1.class
+org/apache/flink/cdc/connectors/base/mocked/MockedPooledDataSourceFactory.class
+org/apache/flink/cdc/connectors/base/GenericConnectionPoolTest$MockConnectionPoolFactory.class
+org/apache/flink/cdc/connectors/base/source/assigner/state/PendingSplitsStateSerializerTest$1$1.class
+org/apache/flink/cdc/connectors/base/source/assigner/state/PendingSplitsStateSerializerTest$UnsupportedPendingSplitsState.class

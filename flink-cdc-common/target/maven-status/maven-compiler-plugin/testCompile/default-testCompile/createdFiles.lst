@@ -1,0 +1,4 @@
+org/apache/flink/cdc/common/testutils/assertions/RecordDataAssert.class
+org/apache/flink/cdc/common/testutils/assertions/ChangeEventAssert.class
+org/apache/flink/cdc/common/testutils/assertions/RecordDataWithSchemaAssert.class
+org/apache/flink/cdc/common/testutils/assertions/AlterColumnTypeEventAssert.class

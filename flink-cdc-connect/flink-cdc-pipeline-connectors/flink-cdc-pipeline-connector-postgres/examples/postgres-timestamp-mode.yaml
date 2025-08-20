@@ -1,0 +1,28 @@
+# Example: PostgreSQL Timestamp Mode
+# This example starts CDC from a specific timestamp
+
+source:
+  type: postgres
+  hostname: localhost
+  port: 5432
+  username: postgres
+  password: password
+  database-name: analytics
+  schema-name: public
+  tables: "events,user_actions,page_views"
+  slot.name: flink_analytics_slot
+  scan.startup.mode: timestamp
+  scan.startup.timestamp-millis: 1640995200000  # 2022-01-01 00:00:00 UTC
+
+sink:
+  type: values
+  
+pipeline:
+  name: "PostgreSQL Timestamp Mode Pipeline"
+  parallelism: 2
+
+# Optional: Add transforms for data processing
+transform:
+  - source-table: "events"
+    projection: "event_id,user_id,event_type,timestamp"
+    filter: "event_type IN ('click', 'view', 'purchase')"

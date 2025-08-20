@@ -1,0 +1,71 @@
+################################################################################
+# Description: MySQL to Amazon DSQL CDC Pipeline Configuration
+################################################################################
+
+source:
+  type: mysql
+  hostname:   # Replace with your MySQL hostname
+  port: 3306
+  username: root  # Replace with your MySQL username
+  password:    # Replace with your MySQL password
+  tables: "sbtest.users"  # Replace with your table pattern (e.g., "mydb.users,mydb.orders" or "mydb.*")
+  server-id: 1  # Unique server ID to avoid conflicts (changed from 1)
+  scan.startup.mode: initial  # Options: initial, earliest-offset, latest-offset, specific-offset, timestamp
+  connect.timeout: 30s
+  connect.max-retries: 3
+  connection.pool.size: 20
+  heartbeat.interval: 30s
+
+sink:
+  type: dsql
+  host:    # Replace with your DSQL cluster endpoint
+  port: 5432
+  database: postgres  # Replace with your DSQL database name
+  schema: public
+  use-iam-auth: true  # Set to true for IAM authentication, false for username/password
+  region: us-east-1  # Replace with your AWS region
+  # Uncomment below if use-iam-auth is false
+  # username: your_dsql_username
+  # password: your_dsql_password
+  max-pool-size: 10
+  min-pool-size: 2
+  connection-max-lifetime-ms: 600000  # 59 minutes
+  connection-idle-timeout-ms: 200000   # 5 minutes
+  enable-full-load: true
+  parallelism: 2
+  # Batch processing configuration
+  batch-size: 1000              # Events per batch (configurable, default: 1000)
+  batch-timeout: 30s           # Max wait time for partial batch (default: 5min)
+  # Connection pool configuration for batch processing
+  batch-max-pool-size: 10       # Max connections in pool (configurable, default: 10)
+  batch-min-pool-size: 2        # Min connections in pool (configurable, default: 2)
+
+pipeline:
+  name: "MySQL to DSQL CDC Pipeline"
+  parallelism: 2
+
+# Optional: Configure checkpointing for fault tolerance
+checkpoint:
+  interval: 10s
+  mode: EXACTLY_ONCE
+  timeout: 5min
+  max-concurrent: 1
+  min-pause-between: 500ms
+
+# Optional: Configure restart strategy
+restart-strategy:
+  type: exponential-delay
+  initial-backoff: 1s
+  max-backoff: 10s
+  backoff-multiplier: 2.0
+  reset-backoff-threshold: 10min
+  jitter-factor: 0.1
+
+# Optional: Configure state backend
+
+# Optional: Transform configuration (if you need data transformation)
+# transform:
+#   - source-table: your_database.your_table
+#     projection: id, name, UPPER(email) as email, created_at
+#     filter: id > 100
+#     primary-keys: id

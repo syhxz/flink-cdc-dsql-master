@@ -1,0 +1,12 @@
+/Users/yonghs/Downloads/flink-cdc-master/flink-cdc-connect/flink-cdc-pipeline-connectors/flink-cdc-pipeline-connector-dsql/src/main/java/org/apache/flink/cdc/connectors/dsql/utils/DsqlSchemaMapper.java
+/Users/yonghs/Downloads/flink-cdc-master/flink-cdc-connect/flink-cdc-pipeline-connectors/flink-cdc-pipeline-connector-dsql/src/main/java/org/apache/flink/cdc/connectors/dsql/sink/DsqlSinkFunction.java
+/Users/yonghs/Downloads/flink-cdc-master/flink-cdc-connect/flink-cdc-pipeline-connectors/flink-cdc-pipeline-connector-dsql/src/main/java/org/apache/flink/cdc/connectors/dsql/utils/DsqlFullLoadCoordinator.java
+/Users/yonghs/Downloads/flink-cdc-master/flink-cdc-connect/flink-cdc-pipeline-connectors/flink-cdc-pipeline-connector-dsql/src/main/java/org/apache/flink/cdc/connectors/dsql/sink/DsqlConnectionWrapper.java
+/Users/yonghs/Downloads/flink-cdc-master/flink-cdc-connect/flink-cdc-pipeline-connectors/flink-cdc-pipeline-connector-dsql/src/main/java/org/apache/flink/cdc/connectors/dsql/utils/DsqlRetryHelper.java
+/Users/yonghs/Downloads/flink-cdc-master/flink-cdc-connect/flink-cdc-pipeline-connectors/flink-cdc-pipeline-connector-dsql/src/main/java/org/apache/flink/cdc/connectors/dsql/auth/DsqlAuthenticator.java
+/Users/yonghs/Downloads/flink-cdc-master/flink-cdc-connect/flink-cdc-pipeline-connectors/flink-cdc-pipeline-connector-dsql/src/main/java/org/apache/flink/cdc/connectors/dsql/factory/DsqlSinkProviderFactory.java
+/Users/yonghs/Downloads/flink-cdc-master/flink-cdc-connect/flink-cdc-pipeline-connectors/flink-cdc-pipeline-connector-dsql/src/main/java/org/apache/flink/cdc/connectors/dsql/sink/DsqlBatchSinkFunction.java
+/Users/yonghs/Downloads/flink-cdc-master/flink-cdc-connect/flink-cdc-pipeline-connectors/flink-cdc-pipeline-connector-dsql/src/main/java/org/apache/flink/cdc/connectors/dsql/sink/DsqlSinkOptions.java
+/Users/yonghs/Downloads/flink-cdc-master/flink-cdc-connect/flink-cdc-pipeline-connectors/flink-cdc-pipeline-connector-dsql/src/main/java/org/apache/flink/cdc/connectors/dsql/sink/DsqlSinkProvider.java
+/Users/yonghs/Downloads/flink-cdc-master/flink-cdc-connect/flink-cdc-pipeline-connectors/flink-cdc-pipeline-connector-dsql/src/main/java/org/apache/flink/cdc/connectors/dsql/utils/DsqlErrorReporter.java
+/Users/yonghs/Downloads/flink-cdc-master/flink-cdc-connect/flink-cdc-pipeline-connectors/flink-cdc-pipeline-connector-dsql/src/main/java/org/apache/flink/cdc/connectors/dsql/sink/DsqlSink.java

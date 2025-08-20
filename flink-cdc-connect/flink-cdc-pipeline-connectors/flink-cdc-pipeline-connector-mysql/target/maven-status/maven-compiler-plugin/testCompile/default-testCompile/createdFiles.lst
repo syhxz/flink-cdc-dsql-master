@@ -1,0 +1,17 @@
+org/apache/flink/cdc/connectors/mysql/source/MySqlFullTypesITCase.class
+org/apache/flink/cdc/connectors/mysql/source/MySqlDataSourceFactoryTest.class
+org/apache/flink/cdc/connectors/mysql/source/MySqlDataSourceFactoryTest$MockContext.class
+org/apache/flink/cdc/connectors/mysql/source/MysqlPipelineNewlyAddedTableITCase.class
+org/apache/flink/cdc/connectors/mysql/source/MySqlPipelineITCase.class
+org/apache/flink/cdc/connectors/mysql/source/MySqlOnLineSchemaMigrationITCase.class
+org/apache/flink/cdc/connectors/mysql/source/MySqlParallelizedPipelineITCase.class
+org/apache/flink/cdc/connectors/mysql/testutils/RecordDataTestUtils.class
+org/apache/flink/cdc/connectors/mysql/source/MySqlMetadataAccessorITCase.class
+org/apache/flink/cdc/connectors/mysql/source/MySqlAncientDateAndTimeITCase.class
+org/apache/flink/cdc/connectors/mysql/source/MySqlTableIdCaseInsensitveITCase.class
+org/apache/flink/cdc/connectors/mysql/source/MysqlPipelineNewlyAddedTableITCase$TestParam$Builder.class
+org/apache/flink/cdc/connectors/mysql/source/MySqlTablePatternMatchingTest$MockContext.class
+org/apache/flink/cdc/connectors/mysql/source/MySqlDataSourceFactoryTest$1.class
+org/apache/flink/cdc/connectors/mysql/source/MysqlPipelineNewlyAddedTableITCase$TestParam.class
+org/apache/flink/cdc/connectors/mysql/source/MySqlTablePatternMatchingTest.class
+org/apache/flink/cdc/connectors/mysql/testutils/MySqSourceTestUtils.class

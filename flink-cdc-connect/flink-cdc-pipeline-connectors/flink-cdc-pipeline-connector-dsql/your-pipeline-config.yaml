@@ -1,0 +1,31 @@
+source:
+  type: postgres
+  hostname: 47.96.6.236
+  port: 5432
+  username: dbmgr
+  password: Tiger123
+  database-name: postgres
+  schema-name: public
+  tables: "public.pgbench_accounts,public.pgbench_branches,public.pgbench_history,public.pgbench_tellers"
+  #slot.name: flink_cdc_slot
+  scan.startup.mode: snapshot
+sink:
+  type: dsql
+  name: Amazon DSQL Sink
+  host: aeabtu73wjnxpin7ypcftevpai.dsql.us-east-1.on.aws
+  port: 5432
+  database: postgres
+  use-iam-auth: true  # Using basic auth
+  username: admin
+  password: dsql_password
+  max-pool-size: 10
+  min-pool-size: 2
+  connection-max-lifetime-ms: 3540000  # 59 minutes
+  connection-idle-timeout-ms: 300000   # 5 minutes
+  enable-full-load: true
+  parallelism: 4
+
+pipeline:
+  name: PostgreSQL to DSQL Pipeline
+  parallelism: 4
+

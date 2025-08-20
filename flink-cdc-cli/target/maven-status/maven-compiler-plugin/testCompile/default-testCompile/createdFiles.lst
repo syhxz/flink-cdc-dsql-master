@@ -1,0 +1,4 @@
+org/apache/flink/cdc/cli/parser/YamlPipelineDefinitionParserTest.class
+org/apache/flink/cdc/cli/CliFrontendTest.class
+org/apache/flink/cdc/cli/CliFrontendTest$NoOpComposer.class
+org/apache/flink/cdc/cli/utils/ConfigurationUtilsTest.class

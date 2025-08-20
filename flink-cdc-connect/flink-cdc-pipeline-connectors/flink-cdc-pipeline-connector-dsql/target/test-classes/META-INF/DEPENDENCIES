@@ -1,0 +1,125 @@
+// ------------------------------------------------------------------
+// Transitive dependencies of this project determined from the
+// maven pom organized by organization.
+// ------------------------------------------------------------------
+
+flink-cdc-pipeline-connector-dsql
+
+
+From: 'an unknown organization'
+  - Checker Qual (https://checkerframework.org) org.checkerframework:checker-qual:jar:3.31.0
+    License: The MIT License  (http://opensource.org/licenses/MIT)
+  - reactive-streams (http://www.reactive-streams.org/) org.reactivestreams:reactive-streams:jar:1.0.4
+    License: MIT-0  (https://spdx.org/licenses/MIT-0.html)
+  - AWS Java SDK :: Annotations (https://aws.amazon.com/sdkforjava/core/annotations) software.amazon.awssdk:annotations:jar:2.32.8
+    License: Apache License, Version 2.0  (https://aws.amazon.com/apache2.0)
+  - AWS Java SDK :: HTTP Clients :: Apache (https://aws.amazon.com/sdkforjava/http-clients/apache-client) software.amazon.awssdk:apache-client:jar:2.32.8
+    License: Apache License, Version 2.0  (https://aws.amazon.com/apache2.0)
+  - AWS Java SDK :: Auth (https://aws.amazon.com/sdkforjava) software.amazon.awssdk:auth:jar:2.32.8
+    License: Apache License, Version 2.0  (https://aws.amazon.com/apache2.0)
+  - AWS Java SDK :: AWS Core (https://aws.amazon.com/sdkforjava) software.amazon.awssdk:aws-core:jar:2.32.8
+    License: Apache License, Version 2.0  (https://aws.amazon.com/apache2.0)
+  - AWS Java SDK :: Core :: Protocols :: AWS Json Protocol (https://aws.amazon.com/sdkforjava) software.amazon.awssdk:aws-json-protocol:jar:2.32.8
+    License: Apache License, Version 2.0  (https://aws.amazon.com/apache2.0)
+  - AWS Java SDK :: Core :: Protocols :: AWS Query Protocol (https://aws.amazon.com/sdkforjava) software.amazon.awssdk:aws-query-protocol:jar:2.32.8
+    License: Apache License, Version 2.0  (https://aws.amazon.com/apache2.0)
+  - AWS Java SDK :: Checksums (https://aws.amazon.com/sdkforjava) software.amazon.awssdk:checksums:jar:2.32.8
+    License: Apache License, Version 2.0  (https://aws.amazon.com/apache2.0)
+  - AWS Java SDK :: Checksums SPI (https://aws.amazon.com/sdkforjava) software.amazon.awssdk:checksums-spi:jar:2.32.8
+    License: Apache License, Version 2.0  (https://aws.amazon.com/apache2.0)
+  - AWS Java SDK :: Services :: DSQL (https://aws.amazon.com/sdkforjava) software.amazon.awssdk:dsql:jar:2.32.8
+    License: Apache License, Version 2.0  (https://aws.amazon.com/apache2.0)
+  - AWS Java SDK :: Endpoints SPI (https://aws.amazon.com/sdkforjava/core/endpoints-spi) software.amazon.awssdk:endpoints-spi:jar:2.32.8
+    License: Apache License, Version 2.0  (https://aws.amazon.com/apache2.0)
+  - AWS Java SDK :: HTTP Auth (https://aws.amazon.com/sdkforjava) software.amazon.awssdk:http-auth:jar:2.32.8
+    License: Apache License, Version 2.0  (https://aws.amazon.com/apache2.0)
+  - AWS Java SDK :: HTTP Auth AWS (https://aws.amazon.com/sdkforjava) software.amazon.awssdk:http-auth-aws:jar:2.32.8
+    License: Apache License, Version 2.0  (https://aws.amazon.com/apache2.0)
+  - AWS Java SDK :: HTTP Auth Event Stream (https://aws.amazon.com/sdkforjava) software.amazon.awssdk:http-auth-aws-eventstream:jar:2.32.8
+    License: Apache License, Version 2.0  (https://aws.amazon.com/apache2.0)
+  - AWS Java SDK :: HTTP Auth SPI (https://aws.amazon.com/sdkforjava) software.amazon.awssdk:http-auth-spi:jar:2.32.8
+    License: Apache License, Version 2.0  (https://aws.amazon.com/apache2.0)
+  - AWS Java SDK :: HTTP Client Interface (https://aws.amazon.com/sdkforjava/http-client-spi) software.amazon.awssdk:http-client-spi:jar:2.32.8
+    License: Apache License, Version 2.0  (https://aws.amazon.com/apache2.0)
+  - AWS Java SDK :: Identity SPI (https://aws.amazon.com/sdkforjava) software.amazon.awssdk:identity-spi:jar:2.32.8
+    License: Apache License, Version 2.0  (https://aws.amazon.com/apache2.0)
+  - AWS Java SDK :: Core :: Protocols :: Json Utils (https://aws.amazon.com/sdkforjava) software.amazon.awssdk:json-utils:jar:2.32.8
+    License: Apache License, Version 2.0  (https://aws.amazon.com/apache2.0)
+  - AWS Java SDK :: Metrics SPI (https://aws.amazon.com/sdkforjava/core/metrics-spi) software.amazon.awssdk:metrics-spi:jar:2.32.8
+    License: Apache License, Version 2.0  (https://aws.amazon.com/apache2.0)
+  - AWS Java SDK :: HTTP Clients :: Netty Non-Blocking I/O (https://aws.amazon.com/sdkforjava/http-clients/netty-nio-client) software.amazon.awssdk:netty-nio-client:jar:2.32.8
+    License: Apache License, Version 2.0  (https://aws.amazon.com/apache2.0)
+  - AWS Java SDK :: Profiles (https://aws.amazon.com/sdkforjava) software.amazon.awssdk:profiles:jar:2.32.8
+    License: Apache License, Version 2.0  (https://aws.amazon.com/apache2.0)
+  - AWS Java SDK :: Core :: Protocols :: Protocol Core (https://aws.amazon.com/sdkforjava) software.amazon.awssdk:protocol-core:jar:2.32.8
+    License: Apache License, Version 2.0  (https://aws.amazon.com/apache2.0)
+  - AWS Java SDK :: Services :: Amazon RDS (https://aws.amazon.com/sdkforjava) software.amazon.awssdk:rds:jar:2.32.8
+    License: Apache License, Version 2.0  (https://aws.amazon.com/apache2.0)
+  - AWS Java SDK :: Regions (https://aws.amazon.com/sdkforjava/core/regions) software.amazon.awssdk:regions:jar:2.32.8
+    License: Apache License, Version 2.0  (https://aws.amazon.com/apache2.0)
+  - AWS Java SDK :: Retries (https://aws.amazon.com/sdkforjava/core/retries) software.amazon.awssdk:retries:jar:2.32.8
+    License: Apache License, Version 2.0  (https://aws.amazon.com/apache2.0)
+  - AWS Java SDK :: Retries API (https://aws.amazon.com/sdkforjava/core/retries-spi) software.amazon.awssdk:retries-spi:jar:2.32.8
+    License: Apache License, Version 2.0  (https://aws.amazon.com/apache2.0)
+  - AWS Java SDK :: SDK Core (https://aws.amazon.com/sdkforjava) software.amazon.awssdk:sdk-core:jar:2.32.8
+    License: Apache License, Version 2.0  (https://aws.amazon.com/apache2.0)
+  - AWS Java SDK :: Services :: AWS STS (https://aws.amazon.com/sdkforjava) software.amazon.awssdk:sts:jar:2.32.8
+    License: Apache License, Version 2.0  (https://aws.amazon.com/apache2.0)
+  - AWS Java SDK :: Third Party :: Jackson-core (https://aws.amazon.com/sdkforjava) software.amazon.awssdk:third-party-jackson-core:jar:2.32.8
+    License: Apache License, Version 2.0  (https://aws.amazon.com/apache2.0)
+  - AWS Java SDK :: Utilities (https://aws.amazon.com/sdkforjava/utils) software.amazon.awssdk:utils:jar:2.32.8
+    License: Apache License, Version 2.0  (https://aws.amazon.com/apache2.0)
+  - AWS Event Stream (https://github.com/awslabs/aws-eventstream-java) software.amazon.eventstream:eventstream:jar:1.0.1
+    License: Apache License, Version 2.0  (https://aws.amazon.com/apache2.0)
+
+From: 'PostgreSQL Global Development Group' (https://jdbc.postgresql.org/)
+  - PostgreSQL JDBC Driver (https://jdbc.postgresql.org) org.postgresql:postgresql:jar:42.6.0
+    License: BSD-2-Clause  (https://jdbc.postgresql.org/about/license.html)
+
+From: 'QOS.ch' (http://www.qos.ch)
+  - SLF4J API Module (http://www.slf4j.org) org.slf4j:slf4j-api:jar:1.7.36
+    License: MIT License  (http://www.opensource.org/licenses/mit-license.php)
+
+From: 'The Apache Software Foundation' (http://www.apache.org/)
+  - Apache Commons Logging (http://commons.apache.org/proper/commons-logging/) commons-logging:commons-logging:jar:1.2
+    License: The Apache Software License, Version 2.0  (http://www.apache.org/licenses/LICENSE-2.0.txt)
+  - Apache HttpClient (http://hc.apache.org/httpcomponents-client) org.apache.httpcomponents:httpclient:jar:4.5.13
+    License: Apache License, Version 2.0  (http://www.apache.org/licenses/LICENSE-2.0.txt)
+  - Apache HttpCore (http://hc.apache.org/httpcomponents-core-ga) org.apache.httpcomponents:httpcore:jar:4.4.16
+    License: Apache License, Version 2.0  (http://www.apache.org/licenses/LICENSE-2.0.txt)
+
+From: 'The Apache Software Foundation' (https://www.apache.org/)
+  - flink-shaded-force-shading (http://flink.apache.org/flink-shaded-force-shading) org.apache.flink:flink-shaded-force-shading:jar:17.0
+    License: The Apache Software License, Version 2.0  (http://www.apache.org/licenses/LICENSE-2.0.txt)
+  - flink-shaded-guava-31 (http://flink.apache.org/flink-shaded-guava) org.apache.flink:flink-shaded-guava:jar:31.1-jre-17.0
+    License: The Apache Software License, Version 2.0  (http://www.apache.org/licenses/LICENSE-2.0.txt)
+
+From: 'The Netty Project' (https://netty.io/)
+  - Netty/Buffer (https://netty.io/netty-buffer/) io.netty:netty-buffer:jar:4.1.118.Final
+    License: Apache License, Version 2.0  (https://www.apache.org/licenses/LICENSE-2.0)
+  - Netty/Codec (https://netty.io/netty-codec/) io.netty:netty-codec:jar:4.1.118.Final
+    License: Apache License, Version 2.0  (https://www.apache.org/licenses/LICENSE-2.0)
+  - Netty/Codec/HTTP (https://netty.io/netty-codec-http/) io.netty:netty-codec-http:jar:4.1.118.Final
+    License: Apache License, Version 2.0  (https://www.apache.org/licenses/LICENSE-2.0)
+  - Netty/Codec/HTTP2 (https://netty.io/netty-codec-http2/) io.netty:netty-codec-http2:jar:4.1.118.Final
+    License: Apache License, Version 2.0  (https://www.apache.org/licenses/LICENSE-2.0)
+  - Netty/Common (https://netty.io/netty-common/) io.netty:netty-common:jar:4.1.118.Final
+    License: Apache License, Version 2.0  (https://www.apache.org/licenses/LICENSE-2.0)
+  - Netty/Handler (https://netty.io/netty-handler/) io.netty:netty-handler:jar:4.1.118.Final
+    License: Apache License, Version 2.0  (https://www.apache.org/licenses/LICENSE-2.0)
+  - Netty/Resolver (https://netty.io/netty-resolver/) io.netty:netty-resolver:jar:4.1.118.Final
+    License: Apache License, Version 2.0  (https://www.apache.org/licenses/LICENSE-2.0)
+  - Netty/Transport (https://netty.io/netty-transport/) io.netty:netty-transport:jar:4.1.118.Final
+    License: Apache License, Version 2.0  (https://www.apache.org/licenses/LICENSE-2.0)
+  - Netty/Transport/Classes/Epoll (https://netty.io/netty-transport-classes-epoll/) io.netty:netty-transport-classes-epoll:jar:4.1.118.Final
+    License: Apache License, Version 2.0  (https://www.apache.org/licenses/LICENSE-2.0)
+  - Netty/Transport/Native/Unix/Common (https://netty.io/netty-transport-native-unix-common/) io.netty:netty-transport-native-unix-common:jar:4.1.118.Final
+    License: Apache License, Version 2.0  (https://www.apache.org/licenses/LICENSE-2.0)
+
+From: 'Zaxxer.com' (https://github.com/brettwooldridge)
+  - HikariCP (https://github.com/brettwooldridge/HikariCP) com.zaxxer:HikariCP:bundle:5.0.1
+    License: The Apache Software License, Version 2.0  (http://www.apache.org/licenses/LICENSE-2.0.txt)
+
+
+
+

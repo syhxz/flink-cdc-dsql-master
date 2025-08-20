@@ -1,0 +1,13 @@
+org/apache/flink/cdc/connectors/postgres/source/config/PostgresPipelineSourceConfigFactory$1.class
+org/apache/flink/cdc/connectors/postgres/source/PostgresSchemaDataTypeInference$1.class
+org/apache/flink/cdc/connectors/postgres/source/PostgresEventDeserializer.class
+org/apache/flink/cdc/connectors/postgres/source/config/StartupOptions.class
+org/apache/flink/cdc/connectors/postgres/source/PostgresDataSource.class
+org/apache/flink/cdc/connectors/postgres/factory/PostgresDataSourceFactory.class
+org/apache/flink/cdc/connectors/postgres/source/config/PostgresPipelineSourceConfigFactory.class
+org/apache/flink/cdc/connectors/postgres/source/PostgresSchemaDataTypeInference.class
+org/apache/flink/cdc/connectors/postgres/source/PostgresSchemaDiscovery.class
+org/apache/flink/cdc/connectors/postgres/utils/PostgresTableNameFormatter.class
+org/apache/flink/cdc/connectors/postgres/source/PostgresDataSource$PostgresMetadataAccessor.class
+org/apache/flink/cdc/connectors/postgres/utils/PostgresValidationUtils.class
+org/apache/flink/cdc/connectors/postgres/source/config/StartupOptions$StartupMode.class

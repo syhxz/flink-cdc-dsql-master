@@ -1,0 +1,31 @@
+################################################################################
+# Description: Sync tables from PostgreSQL to Amazon DSQL
+################################################################################
+
+source:
+  type: postgres
+  hostname: localhost
+  port: 5432
+  username: postgres
+  password: postgres
+  database-name: postgres
+  schema-name: public
+  table-name: orders,products,customers
+
+sink:
+  type: dsql
+  host: my-dsql-cluster.amazonaws.com
+  port: 5432
+  database: my_database
+  use-iam-auth: true
+  region: us-west-2
+  max-pool-size: 10
+  min-pool-size: 2
+  connection-max-lifetime-ms: 3540000  # 59 minutes
+  connection-idle-timeout-ms: 300000   # 5 minutes
+  enable-full-load: true
+  parallelism: 4
+
+pipeline:
+  name: PostgreSQL to DSQL Pipeline
+  parallelism: 2

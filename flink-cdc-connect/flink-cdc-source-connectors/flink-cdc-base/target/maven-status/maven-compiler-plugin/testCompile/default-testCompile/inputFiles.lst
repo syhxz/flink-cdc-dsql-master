@@ -1,0 +1,4 @@
+/Users/yonghs/Downloads/flink-cdc-master/flink-cdc-connect/flink-cdc-source-connectors/flink-cdc-base/src/test/java/org/apache/flink/cdc/connectors/base/mocked/MockedSourceConfig.java
+/Users/yonghs/Downloads/flink-cdc-master/flink-cdc-connect/flink-cdc-source-connectors/flink-cdc-base/src/test/java/org/apache/flink/cdc/connectors/base/mocked/MockedPooledDataSourceFactory.java
+/Users/yonghs/Downloads/flink-cdc-master/flink-cdc-connect/flink-cdc-source-connectors/flink-cdc-base/src/test/java/org/apache/flink/cdc/connectors/base/GenericConnectionPoolTest.java
+/Users/yonghs/Downloads/flink-cdc-master/flink-cdc-connect/flink-cdc-source-connectors/flink-cdc-base/src/test/java/org/apache/flink/cdc/connectors/base/source/assigner/state/PendingSplitsStateSerializerTest.java

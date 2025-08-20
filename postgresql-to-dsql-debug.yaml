@@ -1,0 +1,78 @@
+source:
+  type: postgres
+  hostname: 
+  port: 5432
+  username: 
+  password: 
+  database-name: postgres
+  schema-name: "public"
+  tables: "users"
+  slot.name: "flink_cdc_slot"
+  scan.startup.mode: snapshot
+  decoding.plugin.name: "pgoutput"
+
+sink:
+  type: dsql
+  host: 
+  port: 5432
+  database: postgres
+  schema: public
+  use-iam-auth: true
+  region: us-east-1
+  
+  # Minimal batch settings for debugging
+  batch-size: 100
+  batch-timeout: 5s
+  batch-max-pool-size: 4
+  batch-min-pool-size: 1
+
+pipeline:
+  name: "PostgreSQL to DSQL CDC Pipeline (Debug)"
+  parallelism: 2
+
+# Restart strategy
+restart-strategy:
+  type: exponential-delay
+  initial-backoff: 5s
+  max-backoff: 60s
+  backoff-multiplier: 2.0
+  reset-backoff-threshold: 10min
+
+# Aggressive checkpointing for debugging
+checkpoint:
+  interval: 10s                    # Very frequent checkpoints for debugging
+  mode: EXACTLY_ONCE
+  timeout: 120s                    # 2 minutes timeout
+  min-pause-between-checkpoints: 5s
+  max-concurrent-checkpoints: 1
+  enable-unaligned-checkpoints: true
+  alignment-timeout: 30s
+  
+# Debug-focused Flink configuration
+flink-conf:
+  # Watermark configuration - more aggressive
+  pipeline.auto-watermark-interval: 500ms
+  
+  # Checkpoint debugging
+  execution.checkpointing.externalized-checkpoint-retention: RETAIN_ON_CANCELLATION
+  execution.checkpointing.prefer-checkpoint-for-recovery: true
+  
+  # Enable checkpoint statistics
+  web.checkpoints.history: 100
+  
+  # Logging configuration for debugging
+  rootLogger.level: INFO
+  logger.checkpoint.level: DEBUG
+  logger.checkpoint.name: org.apache.flink.runtime.checkpoint
+  
+  # Buffer configuration
+  taskmanager.network.memory.fraction: 0.1
+  taskmanager.network.memory.min: 64mb
+  
+  # Metrics for debugging
+  metrics.latency.interval: 5000
+  metrics.latency.granularity: subtask
+  
+  # Enable detailed metrics
+  metrics.reporter.slf4j.class: org.apache.flink.metrics.slf4j.Slf4jReporter
+  metrics.reporter.slf4j.interval: 10 SECONDS

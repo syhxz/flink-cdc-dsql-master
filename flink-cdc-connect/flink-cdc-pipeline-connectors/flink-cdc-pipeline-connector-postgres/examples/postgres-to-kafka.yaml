@@ -1,0 +1,25 @@
+# Example: PostgreSQL to Kafka Pipeline
+# This example shows how to stream changes from PostgreSQL to Kafka
+
+source:
+  type: postgres
+  hostname: localhost
+  port: 5432
+  username: postgres
+  password: password
+  database-name: ecommerce
+  schema-name: public
+  tables: "users,orders,products,order_items"
+  slot.name: flink_kafka_slot
+  scan.startup.mode: snapshot
+
+sink:
+  type: kafka
+  bootstrap.servers: localhost:9092
+  topic: postgres-cdc-events
+  key.format: json
+  value.format: json
+
+pipeline:
+  name: "PostgreSQL to Kafka CDC Pipeline"
+  parallelism: 2

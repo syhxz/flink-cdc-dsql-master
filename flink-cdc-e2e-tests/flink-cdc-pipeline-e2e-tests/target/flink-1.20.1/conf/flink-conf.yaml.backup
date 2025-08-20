@@ -1,0 +1,28 @@
+# Flink Configuration - Reduce Connection Reset Issues
+
+# Memory Configuration (Required)
+jobmanager.memory.process.size: 1600m
+taskmanager.memory.process.size: 1728m
+taskmanager.numberOfTaskSlots: 1
+
+# REST API Configuration - REDUCE CONNECTION RESET ERRORS
+rest.port: 8081
+rest.connection-timeout: 60000
+rest.idleness-timeout: 300000
+rest.server.numThreads: 4
+rest.server.thread-priority: 5
+
+# Web UI Configuration  
+web.timeout: 60000
+web.refresh-interval: 5000
+
+# Network Configuration - MINIMIZE CONNECTION ISSUES
+network.request-timeout: 120000
+network.max-num-tcp-connections: 1
+
+# Reduce connection pool size to minimize connection resets
+taskmanager.network.request-backoff.initial: 100
+taskmanager.network.request-backoff.max: 10000
+
+# Parallelism
+parallelism.default: 1

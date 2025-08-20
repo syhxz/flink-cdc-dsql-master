@@ -1,0 +1,26 @@
+# Example: PostgreSQL Full Load with Incremental CDC
+# This example performs a full load of existing data followed by incremental CDC
+
+source:
+  type: postgres
+  hostname: localhost
+  port: 5432
+  username: postgres
+  password: password
+  database-name: warehouse
+  schema-name: public
+  tables: "customers,orders,products,inventory"
+  slot.name: flink_warehouse_slot
+  scan.startup.mode: snapshot  # Full load mode
+
+sink:
+  type: values  # For testing purposes
+  
+pipeline:
+  name: "PostgreSQL Full Load Pipeline"
+  parallelism: 4
+  
+# Optional: Configure checkpointing for fault tolerance
+checkpoint:
+  interval: 10s
+  mode: EXACTLY_ONCE
