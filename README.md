@@ -30,32 +30,6 @@ full database synchronization, sharding table synchronization, schema evolution 
 
 ![Flink CDC framework design](docs/static/fig/architecture.png)
 
-### Quickstart Guide
-
-Flink CDC provides a CdcUp CLI utility to start a playground environment and run Flink CDC jobs.
-You will need to have a working Docker and Docker compose environment to use it.
-
-1. Run `git clone https://github.com/apache/flink-cdc.git --depth=1` to retrieve a copy of Flink CDC source code.
-2. Run `cd tools/cdcup/ && ./cdcup.sh init` to use the CdcUp tool to start a playground environment.
-3. Run `./cdcup.sh up` to boot-up docker containers, and wait for them to be ready.
-4. Run `./cdcup.sh mysql` to open a MySQL session, and create at least one table.
-
-```sql
--- initialize db and table
-CREATE DATABASE cdc_playground;
-USE cdc_playground;
-CREATE TABLE test_table (id INT PRIMARY KEY, name VARCHAR(32));
-
--- insert test data
-INSERT INTO test_table VALUES (1, 'alice'), (2, 'bob'), (3, 'cicada'), (4, 'derrida');
-
--- verify if it has been successfully inserted
-SELECT * FROM test_table;
-```
-
-5. Run `./cdcup.sh pipeline pipeline-definition.yaml` to submit the pipeline job. You may also edit the pipeline definition file for further configurations.
-6. Run `./cdcup.sh flink` to access the Flink Web UI.
-
 ### Getting Started
 
 1. Prepare a [Apache Flink](https://nightlies.apache.org/flink/flink-docs-master/docs/try-flink/local_installation/#starting-and-stopping-a-local-cluster) cluster and set up `FLINK_HOME` environment variable.
@@ -121,10 +95,10 @@ SELECT * FROM test_table;
 4. Submit pipeline job using `flink-cdc.sh` script.
  ```shell
   # For MySQL to DSQL
-  bash bin/flink-cdc.sh /path/mysql-to-dsql.yaml
+  bash cd $FLINK_BASE && ./run-cdc.sh mysql-to-dsql.yaml
   
   # For PostgreSQL to DSQL
-  bash bin/flink-cdc.sh /path/postgresql-to-dsql.yaml
+  bash cd $FLINK_BASE && ./run-cdc.sh postgresql-to-dsql.yaml
  ```
 5. View job execution status through Flink WebUI or downstream database.
 
