@@ -1,0 +1,86 @@
+source:
+  type: postgres
+  hostname: 
+  port: 5432
+  username: 
+  password: 
+  database-name: postgres
+  schema-name: "public"
+  tables: "users,pgbench_tellers"
+  slot.name: "flink_cdc_slot"
+  scan.startup.mode: snapshot
+  decoding.plugin.name: "pgoutput"
+
+sink:
+  type: dsql
+  host: 
+  port: 5432
+  database: postgres
+  schema: public
+  use-iam-auth: true
+  region: us-east-1
+  
+  # UPSERT configuration for CDC implementation
+  use-upsert-for-cdc: true
+  snapshot-timeout-minutes: 3  # Switch to UPSERT mode after 3 minutes
+  
+  # COPY command configuration for full load stage
+  use-copy-for-full-load: true    # Enable COPY command for better performance
+  copy-delimiter: "\t"            # Tab delimiter for COPY command
+  copy-null-string: "\\N"         # NULL representation in COPY format
+
+# Pipeline configuration
+pipeline:
+  name: "PostgreSQL to DSQL CDC Pipeline"
+  parallelism: 2
+
+# CDC Checkpoint Timeout Configuration:
+# Since jvm-args is not supported in YAML, use command line option:
+# flink run -D flink.cdc.checkpoint.timeout=600000 --class org.apache.flink.cdc.cli.CliFrontend "$CLI_JAR" postgresql-to-dsql.yaml
+#
+# Timeout Values:
+#   300000  = 5 minutes (default)
+#   600000  = 10 minutes (recommended for production)
+#   900000  = 15 minutes (for large snapshots)
+#   1800000 = 30 minutes (for very large databases)
+#   0       = Disable timeout (original behavior)
+  
+# Schema evolution configuration
+schema:
+  evolution:
+    enabled: true
+    create-table-if-not-exists: true
+    add-column: true
+    drop-column: false
+  
+  # Batch processing configuration optimized for PostgreSQL CDC
+  batch-size: 500
+  batch-timeout: 30s
+  
+  # Connection pool settings
+  batch-max-pool-size: 4
+  batch-min-pool-size: 1
+  connection-max-lifetime-ms: 600000    # 10 minutes
+  connection-idle-timeout-ms: 300000    # 5 minutes
+
+
+# Restart strategy
+restart-strategy:
+  type: fixed-delay
+  attempts: 3
+  delay: 10s
+
+# Checkpointing - Normal production values
+checkpoint:
+  interval: 300s        # 5 minutes - normal for production
+  mode: EXACTLY_ONCE
+  timeout: 600s         # 10 minutes - increased timeout
+  min-pause: 60s        # 1 minute between checkpoints
+  max-concurrent: 1
+  tolerable-failed-checkpoints: 5
+
+# Logging configuration for debugging
+  rootLogger.level: INFO
+  logger.checkpoint.level: DEBUG
+  logger.checkpoint.name: org.apache.flink.runtime.checkpoint
+  

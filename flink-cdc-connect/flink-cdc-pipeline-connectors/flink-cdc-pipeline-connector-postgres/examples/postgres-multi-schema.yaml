@@ -1,0 +1,32 @@
+# Example: PostgreSQL Multi-Schema Pipeline
+# This example shows how to capture changes from multiple schemas
+
+source:
+  type: postgres
+  hostname: localhost
+  port: 5432
+  username: postgres
+  password: password
+  database-name: enterprise
+  schema-name: public  # Default schema
+  tables: "public.users,sales.orders,inventory.products,hr.employees"
+  slot.name: flink_enterprise_slot
+  scan.startup.mode: latest-offset  # Incremental only
+
+sink:
+  type: values
+  
+pipeline:
+  name: "PostgreSQL Multi-Schema Pipeline"
+  parallelism: 3
+
+# Route different tables to different processing
+route:
+  - source-table: "public.users"
+    sink-table: "user_events"
+  - source-table: "sales.orders"
+    sink-table: "order_events"
+  - source-table: "inventory.products"
+    sink-table: "product_events"
+  - source-table: "hr.employees"
+    sink-table: "employee_events"

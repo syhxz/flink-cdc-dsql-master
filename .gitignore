@@ -1,0 +1,19 @@
+target/
+*.class
+*.jar
+*.log
+.idea/
+*.iml
+.settings/
+.classpath
+.project
+bin/
+dependency-reduced-pom.xml
+# Pipeline config files (contain credentials)
+test-*.yaml
+*-to-*.yaml
+# All pipeline YAML configs at project root
+mysql-to-dsql.yaml
+postgres-to-postgres.yaml
+postgresql-to-dsql-debug.yaml
+your-pipeline-config.yaml
